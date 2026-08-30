@@ -12,7 +12,8 @@ import sharp from "sharp";
  * so the script is safe to re-run.
  */
 
-const REPO_ROOT = resolve(fileURLToPath(import.meta.url), "../../..");
+// Relative to this file's location in `scripts/` - update if the script moves.
+const REPO_ROOT = resolve(fileURLToPath(import.meta.url), "../..");
 const SERIES_DIR = join(REPO_ROOT, "series");
 
 /**
