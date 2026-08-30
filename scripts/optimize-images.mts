@@ -1,20 +1,22 @@
-import { readdir, stat } from "node:fs/promises";
+import { stat } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
 import sharp from "sharp";
+import {
+  collectFiles,
+  CARTOONS_DIR,
+  formatMb,
+  ITERATION_PNG_PATTERN,
+  REPO_ROOT,
+} from "./image-utils.js";
 
 /**
- * Compresses the cartoon PNGs in `series/`.
+ * Compresses the cartoon PNGs in `cartoons/`.
  *
  * Source images are named `<slug>.<iteration>.png` (e.g. `my-cartoon.013.png`).
  * For every slug we take the highest iteration and write a compressed
  * `<slug>.png` next to it. Slugs that already have a `<slug>.png` are skipped,
  * so the script is safe to re-run.
  */
-
-// Relative to this file's location in `scripts/` - update if the script moves.
-const REPO_ROOT = resolve(fileURLToPath(import.meta.url), "../..");
-const SERIES_DIR = join(REPO_ROOT, "series");
 
 /**
  * Quality target for the lossy PNG pass, on the same 0-100 scale JPEG uses.
@@ -25,9 +27,6 @@ const SERIES_DIR = join(REPO_ROOT, "series");
  * target at ~30% of the size, so that is what we use.
  */
 const QUALITY = 95;
-
-/** Matches `<slug>.<iteration>.png`, capturing the slug and the iteration. */
-const ITERATION_PATTERN = /^(.+)\.(\d+)\.png$/i;
 
 type Candidate = {
   /** Absolute path of the highest iteration found so far. */
@@ -40,22 +39,6 @@ type Candidate = {
   compressed: boolean;
 };
 
-async function collectPngFiles(dir: string): Promise<string[]> {
-  const entries = await readdir(dir, { withFileTypes: true });
-  const files: string[] = [];
-
-  for (const entry of entries) {
-    const path = join(dir, entry.name);
-    if (entry.isDirectory()) {
-      files.push(...(await collectPngFiles(path)));
-    } else if (entry.isFile() && entry.name.toLowerCase().endsWith(".png")) {
-      files.push(path);
-    }
-  }
-
-  return files;
-}
-
 /**
  * Groups PNGs by directory + slug, keeping the latest iteration of each and
  * noting whether the compressed version already exists.
@@ -66,7 +49,7 @@ function groupBySlug(files: string[]): Map<string, Candidate> {
   for (const file of files) {
     const dir = resolve(file, "..");
     const name = file.slice(dir.length + 1);
-    const match = ITERATION_PATTERN.exec(name);
+    const match = ITERATION_PNG_PATTERN.exec(name);
 
     // A PNG without an iteration counter is the compressed output itself.
     const slug = match?.[1] ?? name.slice(0, -".png".length);
@@ -110,12 +93,8 @@ async function compress(source: string, target: string): Promise<void> {
     .toFile(target);
 }
 
-function formatMb(bytes: number): string {
-  return `${(bytes / 1024 / 1024).toFixed(2)} MB`;
-}
-
 async function main(): Promise<void> {
-  const files = await collectPngFiles(SERIES_DIR);
+  const files = await collectFiles(CARTOONS_DIR, /\.png$/i);
   const candidates = [...groupBySlug(files).values()].sort((a, b) =>
     a.target.localeCompare(b.target),
   );
@@ -135,7 +114,7 @@ async function main(): Promise<void> {
     const saved = Math.round((1 - after.size / before.size) * 100);
 
     console.log(
-      `${relative(REPO_ROOT, target)} ← ${relative(SERIES_DIR, source)} ` +
+      `${relative(REPO_ROOT, target)} ← ${relative(CARTOONS_DIR, source)} ` +
         `(${formatMb(before.size)} → ${formatMb(after.size)}, -${saved}%)`,
     );
   }

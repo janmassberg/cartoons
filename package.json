@@ -4,6 +4,7 @@
   "type": "module",
   "packageManager": "pnpm@10.32.1",
   "scripts": {
+    "create-iteration-images": "tsx scripts/create-iteration-images.mts",
     "optimize-images": "tsx scripts/optimize-images.mts",
     "typecheck": "tsc --noEmit"
   },
