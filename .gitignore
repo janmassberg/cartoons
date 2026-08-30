@@ -71,3 +71,15 @@ build/
 # ---------------------------------------------------------------------------
 # Personal, machine-local; .claude/settings.json stays shareable.
 .claude/settings.local.json
+
+# ---------------------------------------------------------------------------
+# Cartoon artwork
+# ---------------------------------------------------------------------------
+# Kept on disk but out of git - the PNGs were ~17 MB and were stripped from
+# history. Scoped to this series only; widen to series/**/*.png if other
+# series should follow the same rule.
+series/claude-and-me/**/*.png
+
+# Local scratch / manual backups. Held a full copy of series/claude-and-me,
+# which would otherwise re-commit the PNGs stripped above.
+.tmp/
