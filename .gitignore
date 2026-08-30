@@ -1,0 +1,73 @@
+# ---------------------------------------------------------------------------
+# macOS
+# ---------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.fseventsd
+.DocumentRevisions-V100
+.com.apple.timemachine.donotpresent
+Icon?
+
+# ---------------------------------------------------------------------------
+# Node / pnpm
+# ---------------------------------------------------------------------------
+node_modules/
+.pnpm-store/
+.pnpm/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Note: pnpm-lock.yaml is intentionally NOT ignored - commit it.
+
+# ---------------------------------------------------------------------------
+# TypeScript
+# ---------------------------------------------------------------------------
+*.tsbuildinfo
+dist/
+build/
+
+# ---------------------------------------------------------------------------
+# Environment / secrets
+# ---------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+*.pem
+
+# ---------------------------------------------------------------------------
+# JetBrains IDEs (PhpStorm / WebStorm)
+# ---------------------------------------------------------------------------
+# Ignored wholesale as personal setup. To share project config instead, drop
+# this line and let .idea/.gitignore exclude only the volatile files.
+.idea/
+
+# ---------------------------------------------------------------------------
+# VS Code
+# ---------------------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# ---------------------------------------------------------------------------
+# Vim / Emacs
+# ---------------------------------------------------------------------------
+*.swp
+*.swo
+*~
+\#*\#
+
+# ---------------------------------------------------------------------------
+# Claude Code
+# ---------------------------------------------------------------------------
+# Personal, machine-local; .claude/settings.json stays shareable.
+.claude/settings.local.json
