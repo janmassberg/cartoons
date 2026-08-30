@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
 
 ## What this repository is
 
@@ -34,18 +34,18 @@ series/<series-name>/<YEAR>/          # story year, e.g. 2026
 
 Two naming rules that are easy to get wrong:
 
-- The image basename is the episode slug **without** the `<NNN>-` prefix — `004-claude-the-future-ceo/claude-the-future-ceo.010.png`.
+- The image basename is the episode slug **without** the `<NNN>-` prefix — `004-Codex-the-future-ceo/Codex-the-future-ceo.010.png`.
 - `<III>` counts image-generation attempts, not episode order, so high values like `.038` are normal and unrelated to the episode number. Never overwrite an existing iteration; add the next one.
 
-Episode numbers in `claude-and-me/2026/` currently have gaps (`001`, `005`, `007` are unused). Confirm intent before claiming a gap for new work.
+Episode numbers in `Codex-and-me/2026/` currently have gaps (`001`, `005`, `007` are unused). Confirm intent before claiming a gap for new work.
 
 ## The series bible is the source of truth
 
-`series/claude-and-me/README.md` is the canonical instruction set for the "Claude and Me" series — recurring character specifications, rendering language, composition rules, humor construction, ready-to-fill prompt templates, and a QA checklist.
+`series/Codex-and-me/README.md` is the canonical instruction set for the "Codex and Me" series — recurring character specifications, rendering language, composition rules, humor construction, ready-to-fill prompt templates, and a QA checklist.
 
-When generating or reviewing cartoons, **read that file rather than working from memory or from this file's summary.** It defines exact invariants (Claude has exactly three antennas, three digits per hand, and three lower appendages; Jan wears no glasses and no watch) whose whole purpose is preventing drift across images. Its §1 also establishes a strict reference hierarchy: approved reference images outrank prose, and a newer approved image outranks an older draft.
+When generating or reviewing cartoons, **read that file rather than working from memory or from this file's summary.** It defines exact invariants (Codex has exactly three antennas, three digits per hand, and three lower appendages; Jan wears no glasses and no watch) whose whole purpose is preventing drift across images. Its §1 also establishes a strict reference hierarchy: approved reference images outrank prose, and a newer approved image outranks an older draft.
 
-The `claude-and-me-cartoonist` skill (`.claude/skills/`) is the operational layer over that bible — episode filing, prompt assembly, QA sequencing — and defers to it on every conflict.
+The `Codex-and-me-cartoonist` skill (`.Codex/skills/`) is the operational layer over that bible — episode filing, prompt assembly, QA sequencing — and defers to it on every conflict.
 
 There is no image-generation tooling in this repo. Cartoon work here means producing prompt text for an external image model, then filing, QA-ing, and compressing what comes back. Never report an image as generated, or a visual criterion as passing, without reading the file.
 
