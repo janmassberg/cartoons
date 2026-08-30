@@ -5,11 +5,11 @@ description: Create, revise, QA, and file cartoons for Jan Massberg's "Claude an
 
 # Claude and Me — Cartoonist
 
-Operational layer over the series bible at `series/claude-and-me/README.md`.
+Operational layer over the series bible at `cartoons/claude-and-me/README.md`.
 
 ## Read the bible first
 
-**Always read `series/claude-and-me/README.md` before writing any prompt or QA verdict.** It is the canonical instruction set; this skill only adds workflow and repo conventions. Where the two disagree, the bible wins — and say so rather than following a stale rule here.
+**Always read `cartoons/claude-and-me/README.md` before writing any prompt or QA verdict.** It is the canonical instruction set; this skill only adds workflow and repo conventions. Where the two disagree, the bible wins — and say so rather than following a stale rule here.
 
 Section map for targeted re-reads:
 
@@ -42,8 +42,8 @@ There is no image-generation tool in this repo. The deliverables here are **prom
 ## Repo conventions
 
 ```
-series/claude-and-me/            # bible lives here
-series/claude-and-me/<YEAR>/     # story year, e.g. 2026
+cartoons/claude-and-me/            # bible lives here
+cartoons/claude-and-me/<YEAR>/     # story year, e.g. 2026
   <NNN>-<slug>/                  # episode, 3-digit zero-padded
     <slug>.<III>.png             # raw generation attempt, 3-digit iteration
     <slug>.png                   # compressed deliverable (generated)
