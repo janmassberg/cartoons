@@ -8,14 +8,22 @@ Use these rules as a system-level art-direction brief. For the closest possible 
 
 Use references in this order:
 
-1. **Primary style and Claude reference:** the latest approved **2026 server-room / ping-pong scene**.
-2. **Primary Jan reference:** the latest approved **16:9 office-login scene**.
+1. **Primary style and Claude reference:** `2026/002-claude-the-hidden-assistant/claude-the-hidden-assistant.png`.
+2. **Primary Jan reference:** `2026/009-claude-building-the-startup/claude-building-the-startup.043.png`. The compressed `claude-building-the-startup.png` is generated from this approved raw iteration.
 3. **Scene-specific references:** the latest approved CEO, company-meeting, or classroom scene when creating a related location or recurring supporting character.
 4. **This README:** resolves verbal constraints and details that are obscured or not visible in a reference image.
 
 Never use an older draft to overwrite a trait visible in a newer approved reference. When two references differ, preserve the latest approved character design and use the older image only for narrative or environmental information.
 
 > **Continuity rule:** Reference images are mandatory for final-quality work. Text instructions alone cannot guarantee an exact recurring character or rendering style.
+
+### Current approved reference ledger
+
+| Purpose | Approved source | Notes |
+| --- | --- | --- |
+| Claude and rendering language | `2026/002-claude-the-hidden-assistant/claude-the-hidden-assistant.png` | Binding for Claude's anatomy, surface, goggles, and the series rendering language. |
+| Jan | `2026/009-claude-building-the-startup/claude-building-the-startup.043.png` | Binding for Jan's rear three-quarter identity, head proportions, dark-blond/greyish haircut, matte skin rendering, black hoodie, and wrist treatment. |
+| Episode 009 final | `2026/009-claude-building-the-startup/claude-building-the-startup.043.png` | Final approved raw frame. `claude-building-the-startup.png` is its compressed deliverable. All earlier episode 009 iterations are drafts and must not override `.043` unless the user explicitly asks to branch from one. |
 
 ## 2. Series identity
 
@@ -77,6 +85,7 @@ Jan is the recurring human point-of-view character.
 | Build | Ordinary adult proportions, stylized with confident European comic exaggeration |
 | Hair | Dark blond to greyish; sides and back very short; longer, chaotic, textured hair on top |
 | Face | No glasses; intelligent, slightly tired, thoughtful or puzzled expression; recognizably the same person across scenes |
+| Skin | Natural warm matte finish with smooth cel-shaded value planes and restrained highlights; never wet, oily, lacquered, or plastic |
 | Clothing | Plain black hoodie; dark, understated trousers when visible |
 | Wrist | No watch; exactly one simple brown leather-band bracelet |
 | Acting | Understated and believable; reactions are curious, skeptical, concerned, or quietly surprised rather than theatrical |
@@ -236,8 +245,8 @@ Copy this template and replace the bracketed fields.
 Create a new 16:9 illustration for Jan Massberg's “Claude and Me” cartoon series.
 
 REFERENCE PRIORITY
-1. Use the attached latest approved 2026 server-room scene as the binding reference for Claude and the rendering language.
-2. Use the attached latest approved office-login scene as the binding reference for Jan.
+1. Use the attached `2026/002-claude-the-hidden-assistant/claude-the-hidden-assistant.png` as the binding reference for Claude and the rendering language.
+2. Use the attached `2026/009-claude-building-the-startup/claude-building-the-startup.043.png` as the binding reference for Jan.
 3. Use any attached scene-specific image only for location, supporting characters, or narrative continuity.
 Do not inherit superseded character traits from older drafts.
 
@@ -258,7 +267,7 @@ CLAUDE CHARACTER LOCK
 Claude is a roughly 2 m tall, genderless artificial intelligence with a large, soft, massive, rounded body; clean moderately saturated cool lavender skin; restrained satin gloss; no clothing; no sexual anatomy; no nose; two large clean white eyes with tiny dark pupils behind round silver-grey goggles; an open friendly mouth when speaking; exactly three glowing antennas; smooth arms; exactly three thick rounded digits on each hand; and, when visible, exactly three broad tentacle-like lower appendages. A small “Claude” label followed by a barcode sits on the middle-to-lower right belly. Claude is kind, wise, literal, innocent, and happy to help. Preserve the approved reference identity exactly.
 
 JAN CHARACTER LOCK
-Jan is a 54-year-old male software engineer with dark-blond/greyish hair, very short sides and back, and chaotic longer hair on top. He wears no glasses, a plain black hoodie, no watch, and exactly one simple brown leather-band bracelet. His acting is understated, intelligent, and believable. Preserve the approved reference identity exactly.
+Jan is a 54-year-old male software engineer with dark-blond/greyish hair, very short sides and back, and chaotic longer hair on top. His skin has a natural warm matte finish with smooth cel-shaded value planes and restrained highlights. He wears no glasses, a plain black hoodie, no watch, and exactly one simple brown leather-band bracelet. His acting is understated, intelligent, and believable. Preserve the approved reference identity exactly.
 
 VISUAL LANGUAGE
 Polished dimensional European corporate-comic illustration; mid-century Franco-Belgian clarity in a modern 2026/2027 setting; strong clean dark outlines; reduced deliberate colors; smooth three-dimensional cel shading; restrained broad highlights; expressive silhouettes; cinematic perspective and depth; dense but purposeful environmental storytelling. No watercolor, aquarelle, mottling, speckles, painterly overlay, photorealism, generic 3D animation, anime, or flat vector rendering.
@@ -303,7 +312,7 @@ Make one conceptual change per iteration whenever possible. Repeating the comple
 ## 15. Universal negative prompt
 
 ```text
-Avoid watercolor, aquarelle, paper grain, paint bloom, mottled color, speckles, freckles, random spots, brush texture, dirty highlights, lens artifacts, muddy shadows, washed-out color, photorealism, generic 3D animation, anime, flat vector art, five-fingered hands, human legs on Claude, missing or extra antennas, a nose on Claude, clothes on Claude, sexual anatomy, glasses on Jan, a watch on Jan, malformed hands, duplicated props, broken desk geometry, inconsistent vanishing points, holograms in front of physical foreground monitors, hologram stands or cables, unreadable text, paraphrased dialogue, cropped bubbles, watermarks, frames, and letterboxing.
+Avoid watercolor, aquarelle, paper grain, paint bloom, mottled color, speckles, freckles, random spots, brush texture, dirty highlights, wet or oily skin, plastic-looking human skin, lens artifacts, muddy shadows, washed-out color, photorealism, generic 3D animation, anime, flat vector art, five-fingered hands, human legs on Claude, missing or extra antennas, a nose on Claude, clothes on Claude, sexual anatomy, glasses on Jan, a watch on Jan, malformed hands, duplicated props, broken desk geometry, inconsistent vanishing points, holograms in front of physical foreground monitors, hologram stands or cables, unreadable text, paraphrased dialogue, cropped bubbles, watermarks, frames, and letterboxing.
 ```
 
 ## 16. Final QA checklist
@@ -318,6 +327,7 @@ Avoid watercolor, aquarelle, paper grain, paint bloom, mottled color, speckles, 
 - [ ] Claude's body has restrained satin gloss without watercolor or mottling.
 - [ ] The `Claude` + barcode belly label is present when the torso area is visible.
 - [ ] Jan has dark-blond/greyish chaotic-top hair with very short sides and back.
+- [ ] Jan's skin has the approved natural warm matte finish with restrained cel-shaded highlights.
 - [ ] Jan wears a black hoodie, no glasses, and no watch.
 - [ ] Jan has one simple brown leather-band bracelet when the wrist is visible.
 
@@ -354,5 +364,4 @@ Avoid watercolor, aquarelle, paper grain, paint bloom, mottled color, speckles, 
 
 ## 17. Definition of done
 
-A new image belongs to the series only when it passes the full checklist and, when placed next to the approved server-room and office-login references, looks like another frame from the same visual world—not merely a similar cartoon.
-
+A new image belongs to the series only when it passes the full checklist and, when placed next to the approved Claude reference and episode 009 iteration `.043`, looks like another frame from the same visual world—not merely a similar cartoon.
