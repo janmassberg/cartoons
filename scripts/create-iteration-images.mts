@@ -11,7 +11,7 @@ import {
 
 const WIDTH = 800;
 const HEIGHT = 450;
-const QUALITY = 75;
+const QUALITY = 90;
 
 async function exists(path: string): Promise<boolean> {
   try {
