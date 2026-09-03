@@ -35,6 +35,14 @@ Section map for targeted re-reads:
 
 Copy the templates from §13/§14/§15 rather than reciting them from memory — they are long, exact, and load-bearing.
 
+## Current approved references
+
+- **Claude and rendering language:** `cartoons/claude-and-me/2026/002-claude-the-hidden-assistant/claude-the-hidden-assistant.png`.
+- **Jan:** `cartoons/claude-and-me/2026/009-claude-building-the-startup/claude-building-the-startup.043.png`.
+- **Episode 009 final:** raw iteration `.043`; `claude-building-the-startup.png` is the compressed deliverable generated from it. Treat every earlier episode 009 iteration as a draft unless the user explicitly asks to branch from it.
+
+The bible's §1 reference ledger is authoritative. Update this snapshot only when the user explicitly approves a newer canonical reference.
+
 ## What this skill can and cannot do
 
 There is no image-generation tool in this repo. The deliverables here are **prompt text** for the user to run in their image model, plus **filing, QA, and compression** of what comes back. Do not claim an image was generated or that visual criteria pass unless you actually read the file.
@@ -51,7 +59,7 @@ cartoons/claude-and-me/<YEAR>/     # story year, e.g. 2026
 
 - Folder is `<NNN>-<slug>`; image basename is the **slug without the number prefix**. E.g. `004-claude-the-future-ceo/claude-the-future-ceo.010.png`.
 - `<III>` is the generation attempt counter — it tracks tries, not episode order, so values like `.038` are normal. Increment for each new attempt; never overwrite an existing iteration.
-- Existing numbers are `002, 003, 004, 006, 008`. **`001`, `005`, and `007` are gaps.** For a new episode, default to the next number above the highest (`009`) and ask whether a gap was meant to be filled instead of silently taking one.
+- Existing numbers are `002, 003, 004, 006, 008, 009`. **`001`, `005`, and `007` are gaps.** For a new episode, default to the next number above the highest (`010`) and ask whether a gap was meant to be filled instead of silently taking one.
 
 ### Compression
 
@@ -70,7 +78,7 @@ cartoons/claude-and-me/<YEAR>/     # story year, e.g. 2026
    - An environmental detail carries a quieter second punchline.
 
    If the premise is really "AI takes over" or Claude is smug or threatening, say so and reshape it — that is an explicit §11 failure, not a style nitpick.
-3. **Name the references.** Per §1: latest approved server-room/ping-pong scene binds Claude and the rendering language; latest approved 16:9 office-login scene binds Jan; scene-specific frames supply only location, supporting characters, and narrative continuity. Reference images are mandatory for final-quality work — remind the user to attach them, and list which files to attach from the episode folders.
+3. **Name the references.** Per §1: episode 002's approved `claude-the-hidden-assistant.png` binds Claude and the rendering language; episode 009 iteration `.043` binds Jan; scene-specific frames supply only location, supporting characters, and narrative continuity. Reference images are mandatory for final-quality work — remind the user to attach them, and list which files to attach from the episode folders.
 4. **Assemble the prompt.** Copy §13, fill the brackets, keep the CLAUDE and JAN CHARACTER LOCK blocks verbatim, and append §15. Output as one copy-paste block.
 5. **File the result.** Save into `<YEAR>/<NNN>-<slug>/<slug>.<III>.png` at the next iteration number.
 6. **QA** (below), then run `pnpm optimize-images`.
@@ -82,6 +90,16 @@ Use the §14 pattern for every revision, with the complete ABSOLUTE INVARIANTS b
 - One conceptual change per iteration whenever possible.
 - Never paraphrase dialogue during a visual-only edit (§10).
 - The result is a new iteration file, not an overwrite.
+
+## Workflow: final approval
+
+When the user explicitly declares an iteration final:
+
+1. Confirm the compressed deliverable was generated from that exact raw iteration.
+2. Record the raw iteration in the bible's §1 approved reference ledger when it becomes a canonical character or style reference.
+3. Update the approved-reference snapshot in this skill to match the bible.
+4. Treat earlier iterations as drafts. Do not promote a later experiment over the approved iteration without a new explicit approval.
+5. Keep the approved raw iteration immutable; future requested edits create a new numbered iteration.
 
 ## QA gate
 
@@ -95,6 +113,7 @@ Fastest-failing invariants, worth checking first — all are exact counts:
 - No clothing, no nose, no sexual anatomy on Claude.
 - `Claude` label + barcode on middle-to-lower right belly when the torso shows.
 - Jan: black hoodie, **no** glasses, **no** watch, exactly one brown leather-band bracelet.
+- Jan's skin uses a natural warm matte cel-shaded finish with restrained highlights, never an oily or plastic gloss.
 - Exact 16:9, no letterboxing, frame, or watermark.
 - Bubbles `#f6f6f6` fill / `#000000` text; dialogue verbatim; monospace for passwords and code.
 - No watercolor, mottling, speckles, or paper grain — a recurring failure mode for this series.
