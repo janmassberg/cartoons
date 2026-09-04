@@ -5,7 +5,7 @@ description: Create, revise, review, and file artwork for Jan Massberg's private
 
 # Claude and Me — Cartoonist
 
-Operational workflow for `series/claude-and-me/`. The canonical creative specification is the [series bible](../../../series/claude-and-me/README.md).
+Operational workflow for `series/claude-and-me/`. The canonical creative specification is the [artwork bible](../../../series/claude-and-me/ARTWORK.md).
 
 ## Authority and required reading
 

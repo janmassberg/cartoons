@@ -6,7 +6,7 @@ Guidance for AI agents working in this repository.
 
 This is Jan Massberg's private, theme-neutral workspace for cartoon series. It is a **content repository, not an application**: artwork and series bibles are the primary artifacts, while `scripts/` contains a small set of image-processing utilities.
 
-Do not describe the entire repository through the subject of one series. Each `series/<series>/README.md` owns that series' premise, characters, art direction, writing rules, references, and QA criteria.
+Do not describe the entire repository through the subject of one series. Each `series/<series>/ARTWORK.md` owns that series' premise, characters, art direction, writing rules, references, and QA criteria.
 
 ## Commands
 
@@ -24,7 +24,7 @@ The utilities use Node.js 22, ESM, TypeScript, and `tsx`. Dependency versions ar
 ## Content layout and naming
 
 ```text
-series/<series>/README.md        # canonical series bible
+series/<series>/ARTWORK.md       # canonical artwork bible
 series/<series>/<YEAR>/
   <NNN>-<slug>/
     <slug>.<III>.png               # source generation iteration
@@ -43,7 +43,7 @@ Before creating, editing, or reviewing a cartoon, read that series' bible in ful
 
 For **Claude and Me**, use:
 
-- Bible: `series/claude-and-me/README.md`
+- Artwork bible: `series/claude-and-me/ARTWORK.md`
 - Operational skill: `.agents/skills/claude-and-me-cartoonist/SKILL.md`
 
 The bible is authoritative for creative decisions. The skill governs repository workflow and must defer to the bible when they differ. Artificial intelligence is the subject of **Claude and Me**, not of the repository as a whole.

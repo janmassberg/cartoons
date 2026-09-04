@@ -10,7 +10,7 @@ The repository holds finished artwork, generation iterations, and the art-direct
 
 Corporate and social satire about people living and working with an extraordinarily capable, relentlessly helpful artificial intelligence.
 
-- [Series bible](series/claude-and-me/README.md)
+- [Artwork bible](series/claude-and-me/ARTWORK.md)
 - [2026 episodes](series/claude-and-me/2026/)
 
 ## Repository structure
@@ -18,7 +18,7 @@ Corporate and social satire about people living and working with an extraordinar
 ```text
 series/
   <series>/
-    README.md                 # canonical series bible
+    ARTWORK.md                # canonical artwork bible
     <year>/
       <NNN>-<slug>/
         <slug>.<III>.png      # source generation iteration
@@ -31,7 +31,7 @@ Episode folders use a three-digit sequence number. Image basenames omit that num
 
 ## Working with a series
 
-Read its `README.md` before creating, editing, or reviewing artwork. That file is the source of truth for approved references, character continuity, visual language, writing, prompt templates, and final QA. Rules belonging to one series do not automatically apply to another.
+Read its `ARTWORK.md` before creating, editing, or reviewing artwork. That file is the source of truth for approved references, character continuity, visual language, writing, prompt templates, and final QA. Rules belonging to one series do not automatically apply to another.
 
 ## Image utilities
 
