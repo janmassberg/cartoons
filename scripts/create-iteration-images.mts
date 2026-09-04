@@ -3,7 +3,7 @@ import { relative } from "node:path";
 import sharp from "sharp";
 import {
   collectFiles,
-  CARTOONS_DIR,
+  SERIES_DIR,
   formatMb,
   ITERATION_PNG_PATTERN,
   REPO_ROOT,
@@ -39,7 +39,7 @@ async function createIterationImage(
 
 async function main(): Promise<void> {
   const sources = (
-    await collectFiles(CARTOONS_DIR, ITERATION_PNG_PATTERN)
+    await collectFiles(SERIES_DIR, ITERATION_PNG_PATTERN)
   ).sort();
   let created = 0;
   let skipped = 0;
@@ -56,7 +56,7 @@ async function main(): Promise<void> {
 
     const [before, after] = await Promise.all([stat(source), stat(target)]);
     console.log(
-      `${relative(REPO_ROOT, target)} ← ${relative(CARTOONS_DIR, source)} ` +
+      `${relative(REPO_ROOT, target)} ← ${relative(SERIES_DIR, source)} ` +
         `(${WIDTH}×${HEIGHT}, ${formatMb(before.size)} → ${formatMb(after.size)})`,
     );
     created += 1;

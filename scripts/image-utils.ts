@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 // Relative to this file's location in `scripts/` - update if the file moves.
 export const REPO_ROOT = resolve(fileURLToPath(import.meta.url), "../..");
-export const CARTOONS_DIR = join(REPO_ROOT, "cartoons");
+export const SERIES_DIR = join(REPO_ROOT, "series");
 
 /** Matches `<slug>.<iteration>.png`, capturing the slug and iteration. */
 export const ITERATION_PNG_PATTERN = /^(.+)\.(\d+)\.png$/i;

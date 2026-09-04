@@ -6,7 +6,7 @@ Guidance for AI agents working in this repository.
 
 This is Jan Massberg's private, theme-neutral workspace for cartoon series. It is a **content repository, not an application**: artwork and series bibles are the primary artifacts, while `scripts/` contains a small set of image-processing utilities.
 
-Do not describe the entire repository through the subject of one series. Each `cartoons/<series>/README.md` owns that series' premise, characters, art direction, writing rules, references, and QA criteria.
+Do not describe the entire repository through the subject of one series. Each `series/<series>/README.md` owns that series' premise, characters, art direction, writing rules, references, and QA criteria.
 
 ## Commands
 
@@ -24,8 +24,8 @@ The utilities use Node.js 22, ESM, TypeScript, and `tsx`. Dependency versions ar
 ## Content layout and naming
 
 ```text
-cartoons/<series>/README.md        # canonical series bible
-cartoons/<series>/<YEAR>/
+series/<series>/README.md        # canonical series bible
+series/<series>/<YEAR>/
   <NNN>-<slug>/
     <slug>.<III>.png               # source generation iteration
     <slug>.<III>.jpg               # generated compact preview
@@ -43,7 +43,7 @@ Before creating, editing, or reviewing a cartoon, read that series' bible in ful
 
 For **Claude and Me**, use:
 
-- Bible: `cartoons/claude-and-me/README.md`
+- Bible: `series/claude-and-me/README.md`
 - Operational skill: `.agents/skills/claude-and-me-cartoonist/SKILL.md`
 
 The bible is authoritative for creative decisions. The skill governs repository workflow and must defer to the bible when they differ. Artificial intelligence is the subject of **Claude and Me**, not of the repository as a whole.
@@ -52,8 +52,8 @@ Inspect an actual image before reporting that any visual criterion passes. The r
 
 ## Generated images
 
-`scripts/create-iteration-images.mts` walks `cartoons/` and creates a missing 800x450 quality-90 JPEG beside each `<slug>.<III>.png`. Existing previews are skipped.
+`scripts/create-iteration-images.mts` walks `series/` and creates a missing 800x450 quality-90 JPEG beside each `<slug>.<III>.png`. Existing previews are skipped.
 
 `scripts/optimize-images.mts` groups PNGs by directory and slug, selects the highest iteration, and writes `<slug>.png` using a quality-95 lossy PNG palette pass with maximum effort and no dithering. Existing deliverables are skipped, so a newer approved iteration is ignored until the stale generated `<slug>.png` is removed.
 
-The utilities resolve `cartoons/` relative to files in `scripts/`; moving those files requires updating path resolution.
+The utilities resolve `series/` relative to files in `scripts/`; moving those files requires updating path resolution.

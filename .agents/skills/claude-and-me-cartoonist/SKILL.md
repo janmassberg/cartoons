@@ -5,7 +5,7 @@ description: Create, revise, review, and file artwork for Jan Massberg's private
 
 # Claude and Me — Cartoonist
 
-Operational workflow for `cartoons/claude-and-me/`. The canonical creative specification is the [series bible](../../../cartoons/claude-and-me/README.md).
+Operational workflow for `series/claude-and-me/`. The canonical creative specification is the [series bible](../../../series/claude-and-me/README.md).
 
 ## Authority and required reading
 
@@ -25,7 +25,7 @@ The bible wins on every creative conflict. Its current reference ledger—not a 
 ## Repository conventions
 
 ```text
-cartoons/claude-and-me/<YEAR>/<NNN>-<slug>/
+series/claude-and-me/<YEAR>/<NNN>-<slug>/
   <slug>.<III>.png   # immutable source iteration
   <slug>.<III>.jpg   # generated compact preview
   <slug>.png         # generated production deliverable

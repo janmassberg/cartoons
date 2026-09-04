@@ -10,13 +10,13 @@ The repository holds finished artwork, generation iterations, and the art-direct
 
 Corporate and social satire about people living and working with an extraordinarily capable, relentlessly helpful artificial intelligence.
 
-- [Series bible](cartoons/claude-and-me/README.md)
-- [2026 episodes](cartoons/claude-and-me/2026/)
+- [Series bible](series/claude-and-me/README.md)
+- [2026 episodes](series/claude-and-me/2026/)
 
 ## Repository structure
 
 ```text
-cartoons/
+series/
   <series>/
     README.md                 # canonical series bible
     <year>/

@@ -3,14 +3,14 @@ import { join, relative, resolve } from "node:path";
 import sharp from "sharp";
 import {
   collectFiles,
-  CARTOONS_DIR,
+  SERIES_DIR,
   formatMb,
   ITERATION_PNG_PATTERN,
   REPO_ROOT,
 } from "./image-utils.js";
 
 /**
- * Compresses the cartoon PNGs in `cartoons/`.
+ * Compresses the cartoon PNGs in `series/`.
  *
  * Source images are named `<slug>.<iteration>.png` (e.g. `my-cartoon.013.png`).
  * For every slug we take the highest iteration and write a compressed
@@ -94,7 +94,7 @@ async function compress(source: string, target: string): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const files = await collectFiles(CARTOONS_DIR, /\.png$/i);
+  const files = await collectFiles(SERIES_DIR, /\.png$/i);
   const candidates = [...groupBySlug(files).values()].sort((a, b) =>
     a.target.localeCompare(b.target),
   );
@@ -114,7 +114,7 @@ async function main(): Promise<void> {
     const saved = Math.round((1 - after.size / before.size) * 100);
 
     console.log(
-      `${relative(REPO_ROOT, target)} ← ${relative(CARTOONS_DIR, source)} ` +
+      `${relative(REPO_ROOT, target)} ← ${relative(SERIES_DIR, source)} ` +
         `(${formatMb(before.size)} → ${formatMb(after.size)}, -${saved}%)`,
     );
   }
