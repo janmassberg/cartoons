@@ -1,60 +1,59 @@
 # AGENTS.md
 
-This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
+Guidance for AI agents working in this repository.
 
-## What this repository is
+## Repository scope
 
-A collection of cartoon ideas around the [CYDAI.net](https://cydai.net) project, a research initiative focused on the intersection of artificial intelligence and cybersecurity.
+This is Jan Massberg's private, theme-neutral workspace for cartoon series. It is a **content repository, not an application**: artwork and series bibles are the primary artifacts, while `scripts/` contains a small set of image-processing utilities.
 
-This is a **content repository, not an application.** The bulk of it is cartoon artwork and the prose art-direction documents that govern that artwork. There is no app to run, no test suite, and no build output — the only code is a single image-compression script. Treat the prose documents as the primary artifacts: they are load-bearing specifications, not notes.
+Do not describe the entire repository through the subject of one series. Each `cartoons/<series>/README.md` owns that series' premise, characters, art direction, writing rules, references, and QA criteria.
 
 ## Commands
 
 ```bash
-pnpm install            # sharp requires a postinstall build (allowed in pnpm-workspace.yaml)
-pnpm optimize-images    # compress series PNGs (see below)
-pnpm typecheck          # tsc --noEmit over scripts/
+pnpm install                   # install pinned workspace dependencies
+pnpm create-iteration-images  # create missing 800x450 JPEG previews
+pnpm optimize-images          # create missing compressed PNG deliverables
+pnpm typecheck                # tsc --noEmit over scripts/
 ```
 
-No lint or test setup exists. `pnpm typecheck` is the only verification gate; run it after touching anything under `scripts/`.
+There is no lint or test suite. Run `pnpm typecheck` after changing anything under `scripts/`; documentation-only and artwork-only changes do not require it.
 
-Node 22 with ESM (`"type": "module"`). Scripts are TypeScript run through `tsx`, using the `.mts` extension — `tsconfig.json`'s `include` lists `*.mts` and `*.ts` explicitly, so a script added with a different extension will silently fall out of typecheck coverage.
+The utilities use Node.js 22, ESM, TypeScript, and `tsx`. Dependency versions are pinned in `pnpm-workspace.yaml` under `catalog:`; update them there rather than replacing `"catalog:"` entries in `package.json`.
 
-Dependency versions are pinned centrally in `pnpm-workspace.yaml` under `catalog:`; `package.json` refers to them as `"catalog:"`. Change the version there, not in `package.json`.
+## Content layout and naming
 
-## Series content structure
-
+```text
+cartoons/<series>/README.md        # canonical series bible
+cartoons/<series>/<YEAR>/
+  <NNN>-<slug>/
+    <slug>.<III>.png               # source generation iteration
+    <slug>.<III>.jpg               # generated compact preview
+    <slug>.png                     # generated production deliverable
 ```
-series/<series-name>/README.md        # the series bible - canonical art direction
-series/<series-name>/<YEAR>/          # story year, e.g. 2026
-  <NNN>-<slug>/                       # episode, 3-digit zero-padded
-    <slug>.<III>.png                  # raw generation attempt
-    <slug>.png                        # compressed deliverable (generated)
-```
 
-Two naming rules that are easy to get wrong:
+- Episode folders use a three-digit sequence number, but image basenames omit the `<NNN>-` prefix.
+- `<III>` is the three-digit generation-attempt counter, not the episode number. Never overwrite an iteration; add the next number.
+- Do not claim an unused episode number without checking the current tree and confirming whether the user intends to fill a gap.
+- Treat source iterations as immutable. Generated previews and deliverables may be recreated from their corresponding source when the user approves replacement.
 
-- The image basename is the episode slug **without** the `<NNN>-` prefix — `004-Codex-the-future-ceo/Codex-the-future-ceo.010.png`.
-- `<III>` counts image-generation attempts, not episode order, so high values like `.038` are normal and unrelated to the episode number. Never overwrite an existing iteration; add the next one.
+## Series bibles and skills
 
-Episode numbers in `Codex-and-me/2026/` currently have gaps (`001`, `005`, `007` are unused). Confirm intent before claiming a gap for new work.
+Before creating, editing, or reviewing a cartoon, read that series' bible in full. Approved reference images and the bible's reference hierarchy determine continuity; do not work from this file's summary or from memory.
 
-## The series bible is the source of truth
+For **Claude and Me**, use:
 
-`series/Codex-and-me/README.md` is the canonical instruction set for the "Codex and Me" series — recurring character specifications, rendering language, composition rules, humor construction, ready-to-fill prompt templates, and a QA checklist.
+- Bible: `cartoons/claude-and-me/README.md`
+- Operational skill: `.agents/skills/claude-and-me-cartoonist/SKILL.md`
 
-When generating or reviewing cartoons, **read that file rather than working from memory or from this file's summary.** It defines exact invariants (Codex has exactly three antennas, three digits per hand, and three lower appendages; Jan wears no glasses and no watch) whose whole purpose is preventing drift across images. Its §1 also establishes a strict reference hierarchy: approved reference images outrank prose, and a newer approved image outranks an older draft.
+The bible is authoritative for creative decisions. The skill governs repository workflow and must defer to the bible when they differ. Artificial intelligence is the subject of **Claude and Me**, not of the repository as a whole.
 
-The `Codex-and-me-cartoonist` skill (`.Codex/skills/`) is the operational layer over that bible — episode filing, prompt assembly, QA sequencing — and defers to it on every conflict.
+Inspect an actual image before reporting that any visual criterion passes. The repository itself contains no local image generator, but an agent may use an available image-generation tool when the user's request authorizes creating or editing artwork.
 
-There is no image-generation tooling in this repo. Cartoon work here means producing prompt text for an external image model, then filing, QA-ing, and compressing what comes back. Never report an image as generated, or a visual criterion as passing, without reading the file.
+## Generated images
 
-## Image compression
+`scripts/create-iteration-images.mts` walks `cartoons/` and creates a missing 800x450 quality-90 JPEG beside each `<slug>.<III>.png`. Existing previews are skipped.
 
-`scripts/optimize-images.mts` walks `series/`, groups PNGs by directory + slug, takes the **highest** iteration per slug, and writes the compressed `<slug>.png` beside it.
+`scripts/optimize-images.mts` groups PNGs by directory and slug, selects the highest iteration, and writes `<slug>.png` using a quality-95 lossy PNG palette pass with maximum effort and no dithering. Existing deliverables are skipped, so a newer approved iteration is ignored until the stale generated `<slug>.png` is removed.
 
-- It **skips any slug that already has a `<slug>.png`**, which makes re-runs cheap but means a newer iteration is ignored until the stale deliverable is deleted.
-- Compression is a lossy PNG palette pass (`quality: 95, effort: 10, dither: 0`), roughly 70% size reduction.
-- It is deliberately **not** a JPEG round-trip, despite that being the intuitive reading of "JPEG-quality compression in PNG format." Measured on this artwork, a q95 JPEG round-trip *grew* files 11–26%, because a lossless PNG must faithfully encode JPEG's ringing artifacts. `dither: 0` matters too: dithering put visible speckle on the flat-shaded areas, which the bible's §6 explicitly forbids.
-
-The script resolves paths from its own location relative to `scripts/`, so moving it breaks path resolution.
+The utilities resolve `cartoons/` relative to files in `scripts/`; moving those files requires updating path resolution.
