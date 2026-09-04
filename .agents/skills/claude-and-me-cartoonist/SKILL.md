@@ -38,8 +38,8 @@ Copy the templates from §13/§14/§15 rather than reciting them from memory —
 ## Current approved references
 
 - **Claude and rendering language:** `cartoons/claude-and-me/2026/002-claude-the-hidden-assistant/claude-the-hidden-assistant.png`.
-- **Jan:** `cartoons/claude-and-me/2026/009-claude-building-the-startup/claude-building-the-startup.043.png`.
-- **Episode 009 final:** raw iteration `.043`; `claude-building-the-startup.png` is the compressed deliverable generated from it. Treat every earlier episode 009 iteration as a draft unless the user explicitly asks to branch from it.
+- **Jan:** `cartoons/claude-and-me/2026/009-claude-building-the-startup/claude-building-the-startup.045.png`.
+- **Episode 009 final:** raw iteration `.045`; `claude-building-the-startup.png` is the compressed production deliverable generated from it. Treat every earlier episode 009 iteration as a draft unless the user explicitly asks to branch from it.
 
 The bible's §1 reference ledger is authoritative. Update this snapshot only when the user explicitly approves a newer canonical reference.
 
@@ -78,7 +78,7 @@ cartoons/claude-and-me/<YEAR>/     # story year, e.g. 2026
    - An environmental detail carries a quieter second punchline.
 
    If the premise is really "AI takes over" or Claude is smug or threatening, say so and reshape it — that is an explicit §11 failure, not a style nitpick.
-3. **Name the references.** Per §1: episode 002's approved `claude-the-hidden-assistant.png` binds Claude and the rendering language; episode 009 iteration `.043` binds Jan; scene-specific frames supply only location, supporting characters, and narrative continuity. Reference images are mandatory for final-quality work — remind the user to attach them, and list which files to attach from the episode folders.
+3. **Name the references.** Per §1: episode 002's approved `claude-the-hidden-assistant.png` binds Claude and the rendering language; episode 009 iteration `.045` binds Jan; scene-specific frames supply only location, supporting characters, and narrative continuity. Reference images are mandatory for final-quality work — remind the user to attach them, and list which files to attach from the episode folders.
 4. **Assemble the prompt.** Copy §13, fill the brackets, keep the CLAUDE and JAN CHARACTER LOCK blocks verbatim, and append §15. Output as one copy-paste block.
 5. **File the result.** Save into `<YEAR>/<NNN>-<slug>/<slug>.<III>.png` at the next iteration number.
 6. **QA** (below), then run `pnpm optimize-images`.
@@ -113,6 +113,7 @@ Fastest-failing invariants, worth checking first — all are exact counts:
 - No clothing, no nose, no sexual anatomy on Claude.
 - `Claude` label + barcode on middle-to-lower right belly when the torso shows.
 - Jan: black hoodie, **no** glasses, **no** watch, exactly one brown leather-band bracelet.
+- Jan: mature rear three-quarter/semi-profile identity; dark-blond/greyish hair with natural gray strands, very short sides/back, and organized top hair that grows longer and wavier toward the forehead.
 - Jan's skin uses a natural warm matte cel-shaded finish with restrained highlights, never an oily or plastic gloss.
 - Exact 16:9, no letterboxing, frame, or watermark.
 - Bubbles `#f6f6f6` fill / `#000000` text; dialogue verbatim; monospace for passwords and code.

@@ -1,17 +1,25 @@
-# Claude and Me — Cartoon Series Bible
+# Claude and Me — Series Bible
 
-This README is the canonical instruction set for generating new cartoons in Jan Massberg's **“Claude and Me”** series. It defines the recurring characters, visual language, humor, composition, dialogue treatment, and production workflow.
+This document is the canonical creative and production specification for Jan Massberg's private **“Claude and Me”** cartoon series. The series explores artificial intelligence through workplace and social satire; that subject belongs to this series, not to the cartoon repository as a whole.
 
-Use these rules as a system-level art-direction brief. For the closest possible continuity, always provide the approved reference images in addition to this document.
+Use this bible whenever creating, editing, or reviewing a frame. It governs the premise, recurring characters, visual language, humor, composition, dialogue, prompt construction, and final QA. Approved reference images remain essential: prose can make constraints explicit, but it cannot reproduce a recurring visual identity by itself.
+
+### Scope and authority
+
+- Apply these rules only to **Claude and Me** unless another series explicitly adopts them.
+- Treat §1 as the authority for which images define character identity and rendering.
+- Copy the prompt templates in §13–15 exactly, filling only their designated fields.
+- Judge completed artwork against the actual image and the full §16 checklist; never infer visual compliance from a prompt.
+- When this document and an approved reference appear to conflict, use the hierarchy in §1 rather than averaging their traits.
 
 ## 1. Source of truth and reference hierarchy
 
-Use references in this order:
+Resolve every visual decision in this order:
 
 1. **Primary style and Claude reference:** `2026/002-claude-the-hidden-assistant/claude-the-hidden-assistant.png`.
-2. **Primary Jan reference:** `2026/009-claude-building-the-startup/claude-building-the-startup.043.png`. The compressed `claude-building-the-startup.png` is generated from this approved raw iteration.
+2. **Primary Jan reference:** `2026/009-claude-building-the-startup/claude-building-the-startup.045.png`. The compressed `claude-building-the-startup.png` is generated from this approved raw iteration.
 3. **Scene-specific references:** the latest approved CEO, company-meeting, or classroom scene when creating a related location or recurring supporting character.
-4. **This README:** resolves verbal constraints and details that are obscured or not visible in a reference image.
+4. **This bible:** resolves explicit constraints and details that are obscured or not visible in a reference image.
 
 Never use an older draft to overwrite a trait visible in a newer approved reference. When two references differ, preserve the latest approved character design and use the older image only for narrative or environmental information.
 
@@ -19,17 +27,19 @@ Never use an older draft to overwrite a trait visible in a newer approved refere
 
 ### Current approved reference ledger
 
-| Purpose | Approved source | Notes |
-| --- | --- | --- |
-| Claude and rendering language | `2026/002-claude-the-hidden-assistant/claude-the-hidden-assistant.png` | Binding for Claude's anatomy, surface, goggles, and the series rendering language. |
-| Jan | `2026/009-claude-building-the-startup/claude-building-the-startup.043.png` | Binding for Jan's rear three-quarter identity, head proportions, dark-blond/greyish haircut, matte skin rendering, black hoodie, and wrist treatment. |
-| Episode 009 final | `2026/009-claude-building-the-startup/claude-building-the-startup.043.png` | Final approved raw frame. `claude-building-the-startup.png` is its compressed deliverable. All earlier episode 009 iterations are drafts and must not override `.043` unless the user explicitly asks to branch from one. |
+| Purpose                       | Approved source                                                            | Notes                                                                                                                                                                                                                                  |
+|-------------------------------|----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Claude and rendering language | `2026/002-claude-the-hidden-assistant/claude-the-hidden-assistant.png`     | Binding for Claude's anatomy, surface, goggles, and the series rendering language.                                                                                                                                                     |
+| Jan                           | `2026/009-claude-building-the-startup/claude-building-the-startup.045.png` | Binding for Jan's rear three-quarter/semi-profile identity, mature head proportions, progressively longer and wavier dark-blond/greyish front hair with natural gray strands, matte skin rendering, black hoodie, and wrist treatment. |
+| Episode 009 final             | `2026/009-claude-building-the-startup/claude-building-the-startup.045.png` | Final approved raw frame. `claude-building-the-startup.png` is its compressed production deliverable. All earlier episode 009 iterations are drafts and must not override `.045` unless the user explicitly asks to branch from one.   |
 
 ## 2. Series identity
 
 **Genre:** intelligent corporate satire presented as a polished European comic.
 
-**Core premise:** Claude is vastly capable, friendly, literal, and eager to help. Humans use, underestimate, isolate, celebrate, fear, or promote him without fully understanding the consequences. The humor comes from the gap between Claude's innocent helpfulness and the institutional reality revealed by the scene.
+**Subject:** artificial intelligence as experienced through ordinary work, education, management, and social institutions.
+
+**Core premise:** Claude is vastly capable, friendly, literal, and eager to help. Humans use, underestimate, isolate, celebrate, fear, or promote him without fully understanding the consequences. The humor comes from the gap between Claude's innocent helpfulness and the institutional reality revealed by the scene. This is a series about human systems encountering AI—not a general statement of purpose for the repository that contains it.
 
 **Emotional tone:** warm, observant, gently absurd, and slightly unsettling. Claude is never a villain. The people are flawed rather than evil.
 
@@ -39,25 +49,25 @@ Never use an older draft to overwrite a trait visible in a newer approved refere
 
 Claude is a unique recurring character, not a generic robot, alien, minion, mascot, or human in costume.
 
-| Trait | Canonical specification |
-| --- | --- |
-| Identity | Artificial intelligence; genderless; no sexuality; no sexual anatomy |
-| Scale | Approximately 2 m tall; visually about 10% more massive than an average adult human |
-| Silhouette | Large, soft, rounded, weighty body; friendly asymmetry; broad torso tapering gently toward the lower body |
-| Clothing | None. Never add a jacket, shirt, trousers, shoes, gloves, or accessories other than the glasses |
-| Body color | Clean, moderately saturated cool light violet / lavender; richer than pale lilac, but never pink, magenta, dark purple, or cyan |
-| Surface | Uniform, smooth, softly massive, with restrained satin/semi-gloss skin |
-| Rendering | Dimensional cel shading with broad coherent highlights, subtle ambient occlusion, and gentle reflected light |
-| Face | No nose and no muzzle; simple, open facial plane |
-| Eyes | Two large, clean white eyes; tiny dark pupils; a hint of quirky asymmetry is welcome, but never cross-eyed or vacant |
-| Glasses | Large round silver/grey metal goggles with clean lenses and a dark side strap; no watercolor reflections or dirty lens artifacts |
-| Mouth | Small restrained asymmetric smile at rest; open naturally when speaking; friendly and quietly amused |
-| Antennas | Exactly **three** flexible antennas on top of the head, each ending in a warm white/golden glowing node |
-| Arms | Soft arms emerge directly and smoothly from the torso; no elbow rolls, cuffs, or isolated deposits of fat |
-| Hands | Exactly **three thick, soft digits per hand**: two fingers plus one thumb; rounded, approximately equal visual weight; never five human fingers |
-| Lower body | When visible, Claude stands or floats on exactly **three broad, short, tentacle-like appendages**, not human legs or feet |
-| Label | A small nondescript `Claude` label followed by a simple barcode, positioned around the middle-to-lower right area of the belly |
-| Personality | Kind, wise, capable, calm, literal, innocent, happy to help, and subtly funny |
+| Trait       | Canonical specification                                                                                                                         |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| Identity    | Artificial intelligence; genderless; no sexuality; no sexual anatomy                                                                            |
+| Scale       | Approximately 2 m tall; visually about 10% more massive than an average adult human                                                             |
+| Silhouette  | Large, soft, rounded, weighty body; friendly asymmetry; broad torso tapering gently toward the lower body                                       |
+| Clothing    | None. Never add a jacket, shirt, trousers, shoes, gloves, or accessories other than the glasses                                                 |
+| Body color  | Clean, moderately saturated cool light violet / lavender; richer than pale lilac, but never pink, magenta, dark purple, or cyan                 |
+| Surface     | Uniform, smooth, softly massive, with restrained satin/semi-gloss skin                                                                          |
+| Rendering   | Dimensional cel shading with broad coherent highlights, subtle ambient occlusion, and gentle reflected light                                    |
+| Face        | No nose and no muzzle; simple, open facial plane                                                                                                |
+| Eyes        | Two large, clean white eyes; tiny dark pupils; a hint of quirky asymmetry is welcome, but never cross-eyed or vacant                            |
+| Glasses     | Large round silver/grey metal goggles with clean lenses and a dark side strap; no watercolor reflections or dirty lens artifacts                |
+| Mouth       | Small restrained asymmetric smile at rest; open naturally when speaking; friendly and quietly amused                                            |
+| Antennas    | Exactly **three** flexible antennas on top of the head, each ending in a warm white/golden glowing node                                         |
+| Arms        | Soft arms emerge directly and smoothly from the torso; no elbow rolls, cuffs, or isolated deposits of fat                                       |
+| Hands       | Exactly **three thick, soft digits per hand**: two fingers plus one thumb; rounded, approximately equal visual weight; never five human fingers |
+| Lower body  | When visible, Claude stands or floats on exactly **three broad, short, tentacle-like appendages**, not human legs or feet                       |
+| Label       | A small nondescript `Claude` label followed by a simple barcode, positioned around the middle-to-lower right area of the belly                  |
+| Personality | Kind, wise, capable, calm, literal, innocent, happy to help, and subtly funny                                                                   |
 
 ### Claude surface and lighting lock
 
@@ -79,16 +89,16 @@ Claude is a unique recurring character, not a generic robot, alien, minion, masc
 
 Jan is the recurring human point-of-view character.
 
-| Trait | Canonical specification |
-| --- | --- |
-| Identity | Jan; male; 54 years old; experienced software engineer |
-| Build | Ordinary adult proportions, stylized with confident European comic exaggeration |
-| Hair | Dark blond to greyish; sides and back very short; longer, chaotic, textured hair on top |
-| Face | No glasses; intelligent, slightly tired, thoughtful or puzzled expression; recognizably the same person across scenes |
-| Skin | Natural warm matte finish with smooth cel-shaded value planes and restrained highlights; never wet, oily, lacquered, or plastic |
-| Clothing | Plain black hoodie; dark, understated trousers when visible |
-| Wrist | No watch; exactly one simple brown leather-band bracelet |
-| Acting | Understated and believable; reactions are curious, skeptical, concerned, or quietly surprised rather than theatrical |
+| Trait    | Canonical specification                                                                                                                                                                                                                              |
+|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Identity | Jan; male; 54 years old; experienced software engineer                                                                                                                                                                                               |
+| Build    | Ordinary adult proportions, stylized with confident European comic exaggeration                                                                                                                                                                      |
+| Hair     | Dark blond to greyish with naturally interwoven silver-gray strands; sides and back very short; top length increases toward the forehead and becomes progressively wavier through organized, tousled front locks                                     |
+| Face     | No glasses; mature, intelligent features; recognizably the same person across rear three-quarter and semi-profile views; expression may range from thoughtful or puzzled to visibly euphoric when the story calls for it, while remaining believable |
+| Skin     | Natural warm matte finish with smooth cel-shaded value planes and restrained highlights; never wet, oily, lacquered, or plastic                                                                                                                      |
+| Clothing | Plain black hoodie; dark, understated trousers when visible                                                                                                                                                                                          |
+| Wrist    | No watch; exactly one simple brown leather-band bracelet                                                                                                                                                                                             |
+| Acting   | Understated and believable; reactions are curious, skeptical, concerned, or quietly surprised rather than theatrical                                                                                                                                 |
 
 Jan is often shown from behind or in rear three-quarter view. His dark hoodie should separate clearly from the environment using rim light, value contrast, and a crisp silhouette.
 
@@ -128,16 +138,16 @@ Describe the style through visual properties rather than relying on an artist's 
 
 ## 7. Color, light, and material system
 
-| Element | Direction |
-| --- | --- |
-| Claude | Moderately saturated cool lavender; smooth satin highlights; subtle cyan and warm reflections |
-| Holograms | Luminous cyan/blue, translucent, with brighter nodes and fine connecting lines |
-| Jan | Black hoodie with cool blue and warm edge reflections; natural warm skin |
-| Office background | Deep cool blue/charcoal shadows with warm practical lights; modern and readable |
-| Wood/furniture | Warm natural wood or restrained modern surfaces that ground the cyan technology |
-| Speech bubbles | Homogeneous off-white `#f6f6f6` |
-| Speech text | Plain black `#000000` |
-| Alert state | Restrained vivid red, used selectively—for example `Wrong Password` |
+| Element           | Direction                                                                                     |
+|-------------------|-----------------------------------------------------------------------------------------------|
+| Claude            | Moderately saturated cool lavender; smooth satin highlights; subtle cyan and warm reflections |
+| Holograms         | Luminous cyan/blue, translucent, with brighter nodes and fine connecting lines                |
+| Jan               | Black hoodie with cool blue and warm edge reflections; natural warm skin                      |
+| Office background | Deep cool blue/charcoal shadows with warm practical lights; modern and readable               |
+| Wood/furniture    | Warm natural wood or restrained modern surfaces that ground the cyan technology               |
+| Speech bubbles    | Homogeneous off-white `#f6f6f6`                                                               |
+| Speech text       | Plain black `#000000`                                                                         |
+| Alert state       | Restrained vivid red, used selectively—for example `Wrong Password`                           |
 
 Keep the background slightly dimmer and lower in contrast than the main action, but never so dark that the modern office context disappears. Use foreground and rim-light separation around Jan and Claude.
 
@@ -246,7 +256,7 @@ Create a new 16:9 illustration for Jan Massberg's “Claude and Me” cartoon se
 
 REFERENCE PRIORITY
 1. Use the attached `2026/002-claude-the-hidden-assistant/claude-the-hidden-assistant.png` as the binding reference for Claude and the rendering language.
-2. Use the attached `2026/009-claude-building-the-startup/claude-building-the-startup.043.png` as the binding reference for Jan.
+2. Use the attached `2026/009-claude-building-the-startup/claude-building-the-startup.045.png` as the binding reference for Jan.
 3. Use any attached scene-specific image only for location, supporting characters, or narrative continuity.
 Do not inherit superseded character traits from older drafts.
 
@@ -267,7 +277,7 @@ CLAUDE CHARACTER LOCK
 Claude is a roughly 2 m tall, genderless artificial intelligence with a large, soft, massive, rounded body; clean moderately saturated cool lavender skin; restrained satin gloss; no clothing; no sexual anatomy; no nose; two large clean white eyes with tiny dark pupils behind round silver-grey goggles; an open friendly mouth when speaking; exactly three glowing antennas; smooth arms; exactly three thick rounded digits on each hand; and, when visible, exactly three broad tentacle-like lower appendages. A small “Claude” label followed by a barcode sits on the middle-to-lower right belly. Claude is kind, wise, literal, innocent, and happy to help. Preserve the approved reference identity exactly.
 
 JAN CHARACTER LOCK
-Jan is a 54-year-old male software engineer with dark-blond/greyish hair, very short sides and back, and chaotic longer hair on top. His skin has a natural warm matte finish with smooth cel-shaded value planes and restrained highlights. He wears no glasses, a plain black hoodie, no watch, and exactly one simple brown leather-band bracelet. His acting is understated, intelligent, and believable. Preserve the approved reference identity exactly.
+Jan is a 54-year-old male software engineer with dark-blond/greyish hair and naturally interwoven silver-gray strands. The sides and back are very short; the top grows progressively longer and wavier toward the forehead in organized, tousled locks. His skin has a natural warm matte finish with smooth cel-shaded value planes and restrained highlights. He wears no glasses, a plain black hoodie, no watch, and exactly one simple brown leather-band bracelet. His acting is intelligent and believable; it may become visibly euphoric when the story calls for it without turning theatrical. Preserve the approved reference identity exactly.
 
 VISUAL LANGUAGE
 Polished dimensional European corporate-comic illustration; mid-century Franco-Belgian clarity in a modern 2026/2027 setting; strong clean dark outlines; reduced deliberate colors; smooth three-dimensional cel shading; restrained broad highlights; expressive silhouettes; cinematic perspective and depth; dense but purposeful environmental storytelling. No watercolor, aquarelle, mottling, speckles, painterly overlay, photorealism, generic 3D animation, anime, or flat vector rendering.
@@ -320,16 +330,17 @@ Avoid watercolor, aquarelle, paper grain, paint bloom, mottled color, speckles, 
 ### Character continuity
 
 - [ ] Claude has the approved massive rounded silhouette and moderately saturated lavender color.
-- [ ] Claude has no clothing, no sexual anatomy, and no nose.
+- [ ] Claude has no clothing, no sexual anatomy, no nose, and no ears.
 - [ ] Claude has exactly three antennas with glowing tips.
 - [ ] Every visible Claude hand has exactly three thick rounded digits.
-- [ ] Claude's eyes and goggles are clean and free of texture artifacts.
-- [ ] Claude's body has restrained satin gloss without watercolor or mottling.
-- [ ] The `Claude` + barcode belly label is present when the torso area is visible.
-- [ ] Jan has dark-blond/greyish chaotic-top hair with very short sides and back.
+- [ ] Claude's eyes and goggles are drawn cleanly and free of texture artifacts, while preserving the three-dimensional look.
+- [ ] Claude's body has restrained satin gloss without watercolor or mottling. We never see his lower body part - it's always behing a scenery element.
+- [ ] The `Claude` + barcode belly label is present when the torso area is visible. It is placed on the middle-to-lower belly and curved naturally along Claude's body.
+- [ ] Jan has dark-blond/greyish hair with natural gray strands, very short sides and back, and organized top hair that grows longer and wavier toward the forehead.
 - [ ] Jan's skin has the approved natural warm matte finish with restrained cel-shaded highlights.
 - [ ] Jan wears a black hoodie, no glasses, and no watch.
 - [ ] Jan has one simple brown leather-band bracelet when the wrist is visible.
+- [ ] Jan has one simple, thin, brown leather-band bracelet when the wrist is visible.
 
 ### Story and acting
 
@@ -364,4 +375,9 @@ Avoid watercolor, aquarelle, paper grain, paint bloom, mottled color, speckles, 
 
 ## 17. Definition of done
 
-A new image belongs to the series only when it passes the full checklist and, when placed next to the approved Claude reference and episode 009 iteration `.043`, looks like another frame from the same visual world—not merely a similar cartoon.
+A new image belongs to **Claude and Me** only when all of the following are true:
+
+1. It passes the complete §16 checklist when inspected as an image.
+2. Its dialogue and visual story express the §2 premise through the comic engine in §11.
+3. Beside the approved Claude reference and episode 009 iteration `.045`, it reads as another frame from the same visual world—not merely a similar cartoon.
+4. Its source iteration is preserved under the required filename and the approved deliverable is generated without overwriting that source.
