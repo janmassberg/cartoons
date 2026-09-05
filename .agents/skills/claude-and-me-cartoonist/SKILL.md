@@ -11,14 +11,14 @@ Operational workflow for `series/claude-and-me/`. The canonical creative specifi
 
 Read the complete series bible before creating a prompt, generating or editing an image, or issuing a QA verdict. Re-read the relevant sections during the work rather than reproducing their rules here:
 
-| Task | Bible sections |
-| --- | --- |
-| Resolve references and continuity | §1 |
-| Develop premise, scene, or joke | §2 and §11–12 |
-| Direct characters and rendering | §3–10 |
-| Build a new-image prompt | §13 and §15 |
-| Build a targeted-edit prompt | §14 and §15 |
-| Review or approve an image | §16–17 |
+| Task                              | Bible sections |
+| --------------------------------- | -------------- |
+| Resolve references and continuity | §1             |
+| Develop premise, scene, or joke   | §2 and §11–12  |
+| Direct characters and rendering   | §3–10          |
+| Build a new-image prompt          | §13 and §15    |
+| Build a targeted-edit prompt      | §14 and §15    |
+| Review or approve an image        | §16–17         |
 
 The bible wins on every creative conflict. Its current reference ledger—not a snapshot in this skill—determines which images bind. Reference images are required for final-quality generation and review.
 
