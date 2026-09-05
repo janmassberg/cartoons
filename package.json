@@ -6,10 +6,12 @@
   "scripts": {
     "create-iteration-images": "tsx scripts/create-iteration-images.mts",
     "optimize-images": "tsx scripts/optimize-images.mts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@types/node": "catalog:",
+    "prettier": "catalog:",
     "sharp": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:"
